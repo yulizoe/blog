@@ -1,0 +1,77 @@
+<div class="well" ng-controller="commentCtrl" >
+    <div class="row">
+        <div class="col-md-3">          
+            <div class="row">
+                <div class="col-md-12">
+                    <a ui-sref="bloglist({management:2})" class="btn btn-primary">返回列表</a>
+                </div>
+                <br/>
+                <div class="col-md-12">
+                    请输入评论id:<input id='oid' />
+                </div>
+ 
+                <br/>
+                <div class="col-md-12">
+                    <a ng-click="showComment()" class="btn btn-primary">显示相应id的数据详情</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="row" ng-repeat="x in comments">
+                <div class="col-md-12">
+                 <form class="form-horizontal" role="form" name="form">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">
+                                评论ID：
+                            </label>
+                            <div class="col-md-10">
+                                <p class="form-control-static">
+                                    {{x.id}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">
+                                被评论的博客id：
+                            </label>
+                            <div class="col-md-10">
+                                <p class="form-control-static">{{x.bid}}</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">
+                                作者：
+                            </label>
+                            <div class="col-md-10">
+                                <p class="form-control-static">{{x.author}}</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">
+                                评论内容：
+                            </label>
+                            <div class="col-md-10">
+                                <p class="form-control-static">{{x.ccontent}}</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">
+                                发表时间：
+                            </label>
+                            <div class="col-md-10">
+                                <p class="form-control-static">{{x.updated_at}}</p>
+                            </div>
+                        </div>
+                </form>  
+
+                </div>
+               <br>  <br> 
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,52 @@
+
+<div class="panel panel-primary" ng-controller="userCtrl">
+    <div class="panel-heading">
+            <div class="panel-title">新增用户</div>
+    </div> 
+    <div class="panel-body">
+        <div class="row">
+        <div class="col-md-12" >
+         <a ui-sref="bloglist({management:2})" class="btn btn-primary">返回评论列表</a>
+          <form ng-submit="submitUser()"> 
+          
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">
+                                    用户名称：
+                                </label>
+                                <div class="col-md-10">
+                                    <input class="form-control" placeholder="最多64个字符" ng-model="userData.name" name="name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">
+                                    用户邮箱：
+                                </label>
+                                <div class="col-md-10">
+                                    <input class="form-control" placeholder="最多64个字符" ng-model="userData.email" name="email">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">
+                                    用户密码：
+                                </label>
+                                <div class="col-md-10">
+                                    <input type="password" class="form-control" placeholder="最多64个字符"  ng-model="userData.password" name="password">
+                                </div>
+                            </div>
+          
+              
+            <div class="form-group text-right">  
+              <button type="submit" class="btn btn-primary btn-lg" >Submit</button>
+            </div>
+          </form>
+
+          </div>
+          </div>
+
+
+      </div>
+
+
+
+</div>

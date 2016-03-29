@@ -1,0 +1,30 @@
+<div class="container" id="right" ng-controller="loginCtrl">
+	<div class="row">
+		<div class="col-md-12">
+		 <nav class="navbar navbar-inverse">
+			  <div class="container-fluid">
+				    <div class="container" >
+					    <div class="navbar-header">
+					      <a class="navbar-brand" href="">博客后台管理</a>
+					    </div>
+					    <div class="navbar-header" ng-click="logout()" style="float:right;margin-right:10px;">
+					      <a class="navbar-brand" href="">退出</a>
+					    </div>
+			        </div>
+		      </div>
+		</nav>
+		</div>
+	</div>
+	<div class="row">
+	    <div class="col-md-3">
+	        <div ui-view="blogtype">
+	        	管理类型加载中...
+	        </div>
+	    </div>
+	    <div class="col-md-9">
+	        <div ui-view="bloggrid">
+	        	博客列表加载中...
+	        </div>
+	    </div>
+	</div>
+</div>

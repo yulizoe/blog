@@ -1,0 +1,7 @@
+diff a/laravel/app/Http/Controllers/Controller.php b/laravel/app/Http/Controllers/Controller.php	(rejected hunks)
+@@ -11,3 +11,5 @@
+ {
+     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+ }
++
++
