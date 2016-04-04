@@ -51,7 +51,7 @@ class CommentController extends Controller
         Comment::destroy($id);
         
         //2.重定向到首页
-        return redirect('/');
+        return redirect('/allblog');
     }
 
 

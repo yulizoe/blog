@@ -71,7 +71,13 @@ Route::get('/blogdetail/{id}','BloglistController@detail');
 Route::get('/publish', 'BloglistController@publish');
 Route::post('/publish', 'BloglistController@add');
 //搜索博文
-Route::get('/search/{keywords}', 'BloglistController@search');
+Route::get('/searchT/{keywords}', 'BloglistController@searchT');
+Route::get('/searchA/{keywords}', 'BloglistController@searchA');
+Route::get('/searchD/{keywords}', 'BloglistController@searchD');
+Route::get('/searchC/{keywords}', 'BloglistController@searchC');
+
+//删除博文
+Route::get('/delete/{id}', 'bloglistController@delete');
 
 
 
@@ -79,7 +85,8 @@ Route::get('/search/{keywords}', 'BloglistController@search');
 Route::post('/blogdetail/{id}', 'CommentController@add');
 //展示评论的页面
 Route::get('/view/{id}', 'CommentController@view');
-
+//删除评论
+//Route::get('/delete/{id}', 'CommentController@delete');
 
 //登录和注册页面
 Route::get('/auth/login', 'Auth\AuthController@getLogin');

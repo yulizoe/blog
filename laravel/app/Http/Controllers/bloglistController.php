@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-
 use App\Bloglist;
 use Request;
 use Response;
 use Input;
+
 class BloglistController extends Controller
 {
 	//博文全览
@@ -25,7 +25,7 @@ class BloglistController extends Controller
 	}
 
     //博文类别
-    public function blogclass($bclass){
+  public function blogclass($bclass){
     	$bloglists=Bloglist::where('bclass','=',$bclass)->latest()->paginate(3);
     	return view('bloglist')->with('bloglists',$bloglists);
     	
@@ -57,12 +57,35 @@ class BloglistController extends Controller
     }
 
   //显示搜索的博文
-  public function search($keywords){
+  public function searchT($keywords){
      $bloglists=Bloglist::where('btitle','like','%'.$keywords.'%')->latest()->paginate(3);
      return view('bloglist')->with('bloglists',$bloglists);
   }
 
-  
+  public function searchA($keywords){
+     $bloglists=Bloglist::where('author','like','%'.$keywords.'%')->latest()->paginate(3);
+     return view('bloglist')->with('bloglists',$bloglists);
+  }
+
+  public function searchC($keywords){
+     $bloglists=Bloglist::where('bcontent','like','%'.$keywords.'%')->latest()->paginate(3);
+     return view('bloglist')->with('bloglists',$bloglists);
+  }
+
+  public function searchD($keywords){
+     $bloglists=Bloglist::where('updated_at','=','%'.$keywords.'%')->latest()->paginate(3);
+     return view('bloglist')->with('bloglists',$bloglists);
+  } 
+
+  //删除博文
+  public function delete($id){
+        //1.在数据库中删除指定id的数据
+        Bloglist::destroy($id);
+        
+        //2.重定向到首页
+        return redirect('/allblog');
+    }
+
 
 //后台
   public function index()

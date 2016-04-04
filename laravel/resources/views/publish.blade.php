@@ -41,9 +41,11 @@
 <div class="form-group" style="padding-bottom:50px;">
     <div class="col-md-10 control-label">
         <select name="bclass">
-		  <option value ="1">第一类博文</option>
-		  <option value ="2">第二类博文</option>
-		  <option value ="3">第三类博文</option>
+		  <option value ="1">读书</option>
+		  <option value ="2">旅游</option>
+		  <option value ="3">电影</option>
+		  <option value ="4">科技</option>
+		  <option value ="5">时尚</option>
 		</select>
     </div>
     <div class="col-md-2">
