@@ -7,6 +7,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Request;
 use Response;
 use Input;
 
@@ -76,7 +77,7 @@ class AuthController extends Controller
   }
 
 
-public function store()
+  public function store()
   {
     User::create(array(
       'name' => Input::get('name'),
@@ -101,6 +102,6 @@ public function store()
   }
 
 
-
+  
 
 }

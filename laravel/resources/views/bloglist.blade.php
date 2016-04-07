@@ -16,7 +16,7 @@
             <span>{{$bloglist->author}}</span>&nbsp;
             <span>{{$bloglist->updated_at}}</span>&nbsp;
             {{-- <span>阅读(0)</span>&nbsp; --}}
-            <a href="/blogdetail/{{$bloglist->id}}">评论(0)</a>
+            <a href="/viewcomment/{{$bloglist->id}}">查看评论</a>
             <a href="/delete/{{$bloglist->id}}">删除</a>
             </div>
          </div>

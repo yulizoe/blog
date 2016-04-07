@@ -1,25 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>留言板</title>
-	</head>
+@extends('ForegroundPublic')
 
-	<body>
-		<div id="header">
-			<a href="/">首页</a>
-			<hr />
-		</div>
-		<div id="content">
-			@yield('content')
-		</div>
-		<div id="footer">
-			<hr />
-			@页脚
-		</div>
+@section('title')
+     评论列表
+@stop
 
 
-	</body>
+@section('rightcontent') 
 
-</html>
+    
+	@foreach ($comments as $comment)
+         <div class="panel panel-default">
+            <div class="panel-heading">评论者：{{$comment-> author }} </div>
+            <div class="panel-body" style="height:100px;word-break:break-all;">
+
+              {{$comment-> ccontent}}
+            </div>
+            <div class="panel-footer" style="text-align:right;"><span>{{$comment->updated_at}}</span>&nbsp;<a href="/deleteComment/{{$comment->id}}">删除</a></div>
+         </div>
+    @endforeach 
+    
+@stop
+
+
 

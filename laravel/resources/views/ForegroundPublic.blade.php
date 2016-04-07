@@ -123,7 +123,7 @@
 
 @section('leftcontent')
       <div class="list-group">
-          <a href="#" class="list-group-item active">个人中心</a>
+          <a href="/editUser/{{Auth::user()->id}}" class="list-group-item active">个人中心</a>
           <a href="/allblog" class="list-group-item ">博文全览</a>
           <a href="/myblog/{{Auth::user()->name}}" class="list-group-item">我的博文列表</a>
           <a href="/publish" class="list-group-item">发表博文</a>               

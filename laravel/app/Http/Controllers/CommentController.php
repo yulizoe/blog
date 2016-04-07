@@ -21,12 +21,12 @@ class CommentController extends Controller
     //     return view('index')->with('comments',$comments);
     // }
 
-    public function view($id){
+    public function viewcomment($id){
         //获取当前id所指明的留言信息
         //显示视图
         //return view('view')->withComment(Comment::find($bid));
         $comments=Comment::where('bid','=',$id)->latest()->get();
-        return view('view')->with('comments',$comments);
+        return view('comment')->with('comments',$comments);
     }
 
     public function add(Requests\StoreCommentPostRequest $request){
@@ -46,7 +46,7 @@ class CommentController extends Controller
 
     }
 
-    public function delete($id){
+    public function deleteComment($id){
         //1.在数据库中删除指定id的数据
         Comment::destroy($id);
         

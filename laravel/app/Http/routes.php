@@ -56,6 +56,9 @@
 
 
 
+//个人中心
+Route::get('/editUser/{id}', 'userController@editUser');
+Route::post('/postEditUser/{id}', 'userController@postEditUser');
 
 //绑定博文全览列表
 Route::get('/allblog', 'BloglistController@view');
@@ -84,9 +87,9 @@ Route::get('/delete/{id}', 'bloglistController@delete');
 //评论页面
 Route::post('/blogdetail/{id}', 'CommentController@add');
 //展示评论的页面
-Route::get('/view/{id}', 'CommentController@view');
+Route::get('/viewcomment/{id}', 'CommentController@viewcomment');
 //删除评论
-//Route::get('/delete/{id}', 'CommentController@delete');
+Route::get('/deleteComment/{id}', 'CommentController@deleteComment');
 
 //登录和注册页面
 Route::get('/auth/login', 'Auth\AuthController@getLogin');

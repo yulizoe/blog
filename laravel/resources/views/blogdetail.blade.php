@@ -8,7 +8,7 @@
 @section('rightcontent')  
         {{-- 博文详情 --}}   
          <div class="panel panel-default">
-            <div class="panel-heading"><a href="/blogdetail/{{$bloglist->id}}">{{$bloglist->btitle}}</a></div>
+            <div class="panel-heading" style="font-weight:900;"><a href="/blogdetail/{{$bloglist->id}}">{{$bloglist->btitle}}</a></div>
             <div id="o+{{$bloglist->id}}" class="panel-body" style="word-break:break-all;min-height:400px;">
               {{$bloglist->bcontent}} 
             </div>
@@ -66,6 +66,6 @@
 	</div>    
  {{-- 评论展示 --}}
           <div class="panel panel-default">
-            <div class="panel-heading" ><a href="/view/{{$bloglist->id}}">点击此处可展示该博客评论</a></div>        
+            <div class="panel-heading" ><a href="/viewcomment/{{$bloglist->id}}">查看评论</a></div>
          </div>
 @stop
