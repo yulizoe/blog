@@ -32,6 +32,10 @@
                         {!! Form::submit('马上注册',array('class'=>'btn btn-large btn-success btn-block')) !!}
                     </fieldset>
                 {!! Form::close() !!}
+                    
+                    <a href="/auth/login">返回登录页面</a>
+                    <br />
+                     <a href="/homepage">返回首页</a>
 
                 </div>
             </div>

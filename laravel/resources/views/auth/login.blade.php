@@ -23,6 +23,8 @@
 
                   <hr/>
                   没有账号？<a href="register">马上注册</a>
+                  <br />
+                  <a href="/homepage">返回首页</a>
             </div>
         </div>
     </div>

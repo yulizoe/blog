@@ -8,14 +8,13 @@
 @section('rightcontent')  
         {{-- 博文详情 --}}   
          <div class="panel panel-default">
-            <div class="panel-heading" style="font-weight:900;"><a href="/blogdetail/{{$bloglist->id}}">{{$bloglist->btitle}}</a></div>
+            <div class="panel-heading" style="font-weight:900;background:#80A8CB;"><a href="/blogdetail/{{$bloglist->id}}"><span style="color:#fff;">{{$bloglist->btitle}}</span></a></div>
             <div id="o+{{$bloglist->id}}" class="panel-body" style="word-break:break-all;min-height:400px;">
               {{$bloglist->bcontent}} 
             </div>
             <div class="panel-footer" style="text-align:right;">
             <span>{{$bloglist->author}}</span>&nbsp;
             <span>{{$bloglist->updated_at}}</span>&nbsp;
-            <span>阅读(0)</span>&nbsp;
             
             </div>
          </div>  
@@ -65,7 +64,21 @@
 		<div>       
 	</div>    
  {{-- 评论展示 --}}
-          <div class="panel panel-default">
+          {{-- <div class="panel panel-default">
             <div class="panel-heading" ><a href="/viewcomment/{{$bloglist->id}}">查看评论</a></div>
-         </div>
+         </div> --}}
+
+         	@foreach ($comments as $comment)
+		         <div class="panel panel-default">
+		            <div class="panel-heading" style="background:#80A8CB;">评论者：{{$comment-> author }} </div>
+		            <div class="panel-body" style="height:100px;word-break:break-all;">
+
+		              {{$comment-> ccontent}}
+		            </div>
+		            <div class="panel-footer" style="text-align:right;"><span>{{$comment->updated_at}}</span>&nbsp;<a href="/deleteComment/{{$comment->id}}">删除</a></div>
+		         </div>
+		    @endforeach 
+		     <div style="text-align:center;">
+             {!! $comments->render() !!}
+             </div>
 @stop

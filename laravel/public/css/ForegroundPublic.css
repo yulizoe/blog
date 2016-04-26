@@ -1,0 +1,27 @@
+
+
+#nav a{
+	color:#fff;
+	font-weight:bold;
+}
+#nav a:link {
+ background: #80A8CC;
+ text-decoration: none
+}
+#nav a:visited {
+ background: #80A8CC;
+ text-decoration: none
+}
+#nav a:hover {
+ background: #2A80B9;
+ text-decoration: none
+}
+#nav a:active {
+ background: #2A80B9;  
+ text-decoration: none
+}
+
+.active{
+	background: #2A80B9;  
+    text-decoration: none
+}

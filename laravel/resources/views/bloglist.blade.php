@@ -8,7 +8,7 @@
           
         @foreach ($bloglists as $bloglist)
          <div class="panel panel-default">
-            <div class="panel-heading" style="font-weight:900;" ><a href="/blogdetail/{{$bloglist->id}}">{{$bloglist->btitle}}</a></div>
+            <div class="panel-heading" style="font-weight:900;background:#80A8CB;" ><a href="/blogdetail/{{$bloglist->id}}"> <span style="color:#fff;">{{$bloglist->btitle}} </span></a></div>
             <div id="o+{{$bloglist->id}}" class="panel-body"  style="height:100px;overflow:hidden;word-break:break-all;">
               {{$bloglist->bcontent}} 
             </div>
@@ -16,7 +16,7 @@
             <span>{{$bloglist->author}}</span>&nbsp;
             <span>{{$bloglist->updated_at}}</span>&nbsp;
             {{-- <span>阅读(0)</span>&nbsp; --}}
-            <a href="/viewcomment/{{$bloglist->id}}">查看评论</a>
+            <a href="/blogdetail/{{$bloglist->id}}">查看评论</a>
             <a href="/delete/{{$bloglist->id}}">删除</a>
             </div>
          </div>

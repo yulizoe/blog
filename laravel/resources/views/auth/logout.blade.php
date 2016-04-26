@@ -11,7 +11,9 @@
                
                <a href="/auth/login">点击此处可返回登录页面</a>
                <br />
-               <a href="/auth/register">想要注册？</a>
+               <a href="/auth/register">想要注册?</a>
+               <br />
+               <a href="/homepage">返回首页</a>
                   
             </div>
         </div>

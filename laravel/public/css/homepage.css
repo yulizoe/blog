@@ -1,0 +1,44 @@
+.scroll_box{
+	width:1140px;
+	height:300px;
+}
+.layout_box{
+    height:300px;
+    border: 1px solid #676D6E;
+}
+.blog_header{
+	font-weight:900;
+	padding:10px;
+	
+	/*border: 1px solid red;*/
+	overflow:hidden;
+	height:42px;
+}
+
+.panel-heading{
+	height:45px;
+	background:#6BB1B9;
+	font-size: 18px;
+	color:#fff;
+}
+
+.blog_author{
+	float:right;
+    color:#000 !important;
+    font-weight:normal;
+}
+
+.blog_title{
+   color:#000;
+}
+
+.sbtn{
+  background: #80A7CB;
+  width:80px !important;
+  float:right;
+}
+
+
+.head-color{
+  color:#fff;
+}

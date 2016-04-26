@@ -55,6 +55,8 @@
 // Route::post('/edit/{id}', 'CommentController@postEdit');
 
 
+//首页
+Route::get('/homepage', 'BloglistController@homepage');
 
 //个人中心
 Route::get('/editUser/{id}', 'userController@editUser');
@@ -72,7 +74,7 @@ Route::get('/blogclass/{bclass}', 'BloglistController@blogclass');
 Route::get('/blogdetail/{id}','BloglistController@detail');
 //绑定发表博文
 Route::get('/publish', 'BloglistController@publish');
-Route::post('/publish', 'BloglistController@add');
+Route::post('/publish/{author}', 'BloglistController@add');
 //搜索博文
 Route::get('/searchT/{keywords}', 'BloglistController@searchT');
 Route::get('/searchA/{keywords}', 'BloglistController@searchA');
@@ -86,8 +88,6 @@ Route::get('/delete/{id}', 'bloglistController@delete');
 
 //评论页面
 Route::post('/blogdetail/{id}', 'CommentController@add');
-//展示评论的页面
-Route::get('/viewcomment/{id}', 'CommentController@viewcomment');
 //删除评论
 Route::get('/deleteComment/{id}', 'CommentController@deleteComment');
 

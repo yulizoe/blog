@@ -10,7 +10,7 @@
 	
 @section('rightcontent')
 
-<form action="/publish" method="post">
+<form action="/publish/{{Auth::user()->name}}" method="post">
 <input type="hidden" name="_token" value="{{csrf_token()}}" />
 <div class="input-group">
   <input type="text" class="form-control" placeholder="Blog Title" aria-describedby="basic-addon2" name="btitle">

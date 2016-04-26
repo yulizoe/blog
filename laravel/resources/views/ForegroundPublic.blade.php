@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="http://localhost:8000/css/bootstrap.min.css" />
+<link rel="stylesheet" href="http://localhost:8000/css/ForegroundPublic.css" />
 @extends('layout')
 
 @section('title')
@@ -48,68 +49,8 @@
             </ul>
           </div>
       </form>
-      <script type="text/javascript">
-      window.onload=function(){
-        $('#searchT').click(function(){
-          if($('#key').val()==''){
-           alert('请输入标题关键字');
-        }else{
-           $('#searchT').attr('href', "/searchT/"+ $('#key').val()); 
-        } 
-       });
-
-        $('#searchA').click(function(){
-          if($('#key').val()==''){
-           alert('请输入作者');
-        }else{
-           $('#searchA').attr('href', "/searchA/"+ $('#key').val()); 
-        }
-      });
-
-        $('#searchC').click(function(){
-          if($('#key').val()==''){
-           alert('请输入作者');
-        }else{
-           $('#searchC').attr('href', "/searchC/"+ $('#key').val()); 
-        }
-      });
-
-        $('#searchD').click(function(){
-          if($('#key').val()==''){
-           alert('请输入日期');
-        }else{
-           $('#searchD').attr('href', "/searchD/"+ $('#key').val()); 
-        }
-      });
-        //日期显示
-         function tick() {
-            var years,months,days;
-            var intYears,intMonths,intDays;
-            var today;
-            today = new Date(); //系统当前时间
-            intYears = today.getFullYear(); //得到年份,getFullYear()比getYear()更普适
-            intMonths = today.getMonth() + 1; //得到月份，要加1
-            intDays = today.getDate(); //得到日期
-            years = intYears + "-";
-            if(intMonths < 10 ){
-            months = "0" + intMonths +"-";
-            } else {
-            months = intMonths +"-";
-            }
-            if(intDays < 10 ){
-            days = "0" + intDays +" ";
-            } else {
-            days = intDays + " ";
-            }
-            
-            timeString = years+months+days;
-            Clock.innerHTML = timeString;
-            }
-            tick();
-      }
-         
-      </script>
         <li><a href="/auth/logout">退出</a></li>
+        <li><a href="/homepage">返回首页</a></li>
         
       </ul>
 
@@ -122,12 +63,12 @@
 
 
 @section('leftcontent')
-      <div class="list-group">
-          <a href="/editUser/{{Auth::user()->id}}" class="list-group-item active">个人中心</a>
+      <div class="list-group" id="nav">
+          <a href="/editUser/{{Auth::user()->id}}" class="list-group-item"  >个人中心</a>
           <a href="/allblog" class="list-group-item ">博文全览</a>
           <a href="/myblog/{{Auth::user()->name}}" class="list-group-item">我的博文列表</a>
           <a href="/publish" class="list-group-item">发表博文</a>               
-        </div>
+      </div>
         <div class="dropdown">
           <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             博文分类浏览
@@ -155,6 +96,7 @@
 
 <script src="http://localhost:8000/js/jquery.min.js"></script>
 <script type="text/javascript" src="http://localhost:8000/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://localhost:8000/js/ForegroundPublic.js"></script>
 
 
 

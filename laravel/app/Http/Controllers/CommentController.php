@@ -21,15 +21,8 @@ class CommentController extends Controller
     //     return view('index')->with('comments',$comments);
     // }
 
-    public function viewcomment($id){
-        //获取当前id所指明的留言信息
-        //显示视图
-        //return view('view')->withComment(Comment::find($bid));
-        $comments=Comment::where('bid','=',$id)->latest()->get();
-        return view('comment')->with('comments',$comments);
-    }
 
-    public function add(Requests\StoreCommentPostRequest $request){
+    public function add(Requests\StoreCommentPostRequest $request ,$id){
         //添加留言到数据库中
         //
         //1.获取表单数据
@@ -41,7 +34,7 @@ class CommentController extends Controller
         
         $comment->save();
         //3.页面重定向到首页
-         return redirect('/allblog');
+        return redirect('/blogdetail/'.$id);
         
 
     }
